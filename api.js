@@ -16,9 +16,11 @@ app.use(bodyParser.urlencoded({
 }));
 var options = {
     host: config.redis_host,
-    post: config.redis_port,
-    password: config.redis_password
+    post: config.redis_port
 };
+if(config.redis_password != ''){
+    options.password = config.redis_password
+}
 var redis_client = redis.createClient(options); //creates a new client
 
 
