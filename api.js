@@ -14,7 +14,12 @@ app.use(bodyParser.json({limit: '10mb'}));
 app.use(bodyParser.urlencoded({            
   extended: true
 }));
-var redis_client = redis.createClient(config.redis_port,config.redis_host); //creates a new client
+var options = {
+    host: config.redis_host,
+    post: config.redis_port,
+    password: config.redis_password
+};
+var redis_client = redis.createClient(options); //creates a new client
 
 
 //  首页

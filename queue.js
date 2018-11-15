@@ -8,7 +8,12 @@ var redis = require('redis');
 var request = require('request');
 var fs = require('fs');
 var config = JSON.parse(fs.readFileSync('./config.json').toString());
-var redis_client = redis.createClient(config.redis_port,config.redis_host); //creates a new client
+var options = {
+    host: config.redis_host,
+    post: config.redis_port,
+    password: config.redis_password
+};
+var redis_client = redis.createClient(options); //creates a new client
 console.log("后台队列服务已经启动，随时等待新队列任务");
 var queue_status_array = [];
 

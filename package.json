@@ -12,7 +12,7 @@
   },
   "author": "star7th",
   "license": "apache2.0",
-  "dependencies":{
+  "dependencies": {
     "express": "4.14.0",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
